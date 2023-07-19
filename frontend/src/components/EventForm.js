@@ -93,11 +93,11 @@ export async function action({ request, params }) {
     description: data.get("description"),
   };
 
-  let url = "https://events-backend-ten.vercel.app/events";
+  let url = "http://localhost:8080/events";
 
   if (method === "PATCH") {
     const eventId = params.eventId;
-    url = "https://events-backend-ten.vercel.app/events/" + eventId;
+    url = "http://localhost:8080/events/" + eventId;
   }
 
   const response = await fetch(url, {
