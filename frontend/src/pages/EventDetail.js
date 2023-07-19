@@ -32,9 +32,7 @@ function EventDetailPage() {
 export default EventDetailPage;
 
 async function loadEvent(id) {
-  const response = await fetch(
-    "https://events-backend-ten.vercel.app/events/" + id
-  );
+  const response = await fetch("http://localhost:8080/events/" + id);
 
   if (!response.ok) {
     throw json(
@@ -50,7 +48,7 @@ async function loadEvent(id) {
 }
 
 async function loadEvents() {
-  const response = await fetch("https://events-backend-ten.vercel.app/events");
+  const response = await fetch("http://localhost:8080/events");
 
   if (!response.ok) {
     throw json(
@@ -76,12 +74,9 @@ export async function loader({ request, params }) {
 
 export async function action({ params, request }) {
   const eventId = params.eventId;
-  const response = await fetch(
-    "https://events-backend-ten.vercel.app/events/" + eventId,
-    {
-      method: request.method,
-    }
-  );
+  const response = await fetch("http://localhost:8080/events/" + eventId, {
+    method: request.method,
+  });
 
   if (!response.ok) {
     throw json(
