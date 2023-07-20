@@ -33,7 +33,7 @@ export default EventDetailPage;
 
 async function loadEvent(id) {
   const response = await fetch(
-    "https://events-backend-omega.vercel.app/events/" + id
+    "https://events-backend-6z5x.onrender.com/events/" + id
   );
 
   if (!response.ok) {
@@ -51,7 +51,7 @@ async function loadEvent(id) {
 
 async function loadEvents() {
   const response = await fetch(
-    "https://events-backend-omega.vercel.app/events"
+    "https://events-backend-6z5x.onrender.com/events"
   );
 
   if (!response.ok) {
@@ -79,7 +79,7 @@ export async function loader({ request, params }) {
 export async function action({ params, request }) {
   const eventId = params.eventId;
   const response = await fetch(
-    "https://events-backend-omega.vercel.app/events/" + eventId,
+    "https://events-backend-6z5x.onrender.com/events/" + eventId,
     {
       method: request.method,
     }

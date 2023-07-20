@@ -18,7 +18,7 @@ export default EventsPage;
 
 async function loadEvents() {
   const response = await fetch(
-    "https://events-backend-omega.vercel.app/events"
+    "https://events-backend-6z5x.onrender.com/events"
   );
 
   if (!response.ok) {

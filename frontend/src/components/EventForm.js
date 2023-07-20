@@ -93,11 +93,11 @@ export async function action({ request, params }) {
     description: data.get("description"),
   };
 
-  let url = "https://events-backend-omega.vercel.app/events";
+  let url = "https://events-backend-6z5x.onrender.com/events";
 
   if (method === "PATCH") {
     const eventId = params.eventId;
-    url = "https://events-backend-omega.vercel.app/events/" + eventId;
+    url = "https://events-backend-6z5x.onrender.com/events/" + eventId;
   }
 
   const response = await fetch(url, {
